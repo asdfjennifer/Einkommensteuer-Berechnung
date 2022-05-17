@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einkommensteuer-Berechnung</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body><section>
+    
+        <form action="">
+            <h1>Ingo's & Jenni's Einkommenssteuer-Rechner</h1>
+            <div>
+                <label for="">Einzelveranlagung</label>
+                    <input type="radio" name="Veranlagung" id="radio_einzel" onchange="veranlagung()" checked>
+            </div>
+            <div>
+                <label for="">Zusammenveranlagung</label>
+                    <input type="radio" name="Veranlagung" id="radio_zusammen" onchange="veranlagung()">
+            </div>
+            <div>
+                <label for="">Zu versteuerndes Einkommen Steuerpflichtiger</label>
+                    <input [type="number"] name="" id="zvE_input">
+            </div>
+            <div class="hidden" id="ehegatte">
+                <label for="" id="label_Ehegatte">Zu versteuerndes Einkommen Ehegatte</label>
+                    <input [type="number"] name="" id="zvE_input_ehegatte">
+            </div>
+            <div>
+                <label for="">2021</label>
+                <input type="radio" name="Jahr" id="radio_jahr_2021" checked>
+                <label for="">2020</label>
+                <input type="radio" name="Jahr" id="radio_jahr_2020">
+                <label for="">2019</label>
+                <input type="radio" name="Jahr" id="radio_jahr_2019">
+            </div>
+        </form>
+        <a onclick="calculateTax()">Berechnen</a>
+        <p>Du musst folgende Einkommenssteuer zahlen:</p>
+        <p id="result_tag"></p>
+</section>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
